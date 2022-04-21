@@ -14,6 +14,8 @@
   --bgc-header: #ececec;
   --bgc-hero-footer: #2f303a;
   --logo: #000000;
+  --icon-text: #afb1b8;
+  --icon-bgc: #ffffff;
 }
 
 html {
@@ -130,6 +132,15 @@ button {
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
+}
+
+.link-nav {
+  margin-right: 10px;
+  fill: var(--secondary-text-color);
+}
+
+.link-nav:hover {
+  fill: var(--accent-color);
 }
 
 .contacts {
@@ -344,13 +355,40 @@ button {
   line-height: 1.18;
   text-align: center;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 16px;
   /* outline: 2px solid tomato; */
 }
 .team-list-name {
   background-color: #ffffff;
   text-align: center;
   padding: 30px 0;
+}
+.team-list-soc {
+  display: flex;
+  justify-content: center;
+}
+
+.team-list-item {
+  margin-left: 10px;
+  box-shadow: none;
+  border-radius: 0px 0px 4px 4px;
+  background: #ffffff;
+}
+.team-list-link {
+  width: 44px;
+  height: 44px;
+  background-color: var(--icon-bgc);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: var(--icon-text);
+}
+
+.team-list-link:hover,
+.team-list-link:focus {
+  background-color: var(--accent-color);
+  fill: var(--icon-bgc);
 }
 /* Клиенты */
 .clients-title {
@@ -363,33 +401,45 @@ button {
 }
 .clients-list {
   display: flex;
-  justify-content: space-between;
-}
-.clients-list-item {
-  width: 1170;
-}
-.clients-list-item::before {
-  background-color: #ffffff#e5e5e5;
-  display: block;
-  content: '';
-  width: 170px;
-  height: 92px;
-  background-size: 106px 60px;
-  border: 1px solid #afb1b8;
-  box-sizing: border-box;
-  border-radius: 4px;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* outline: 2px solid tomato; */
+  justify-content: center;
 }
 
+.clients-link {
+  margin: 0;
+  padding: 0;
+  width: 170px;
+  height: 92px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: var(--icon-text);
+  border: 1px solid var(--icon-text);
+  box-sizing: border-box;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.clients-link:hover,
+.clients-link:focus,
+.clients-link:active {
+  fill: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.clients-list-item:not(:last-child) {
+  margin-right: 30px;
+}
 /* Футер */
 .footer {
   background-color: var(--bgc-hero-footer);
   padding-top: 60px;
   padding-bottom: 60px;
 }
-
+.container-footer {
+  display: flex;
+  align-items: baseline;
+}
 .span-logo-footer {
   font-family: 'Raleway';
   color: #ffffff;
@@ -431,6 +481,43 @@ button {
 .footer-list .address:hover,
 .footer-list .address:focus {
   color: var(--accent-color);
+}
+
+/* Соц.сети */
+.join {
+  margin-left: 70px;
+}
+.join-soc-title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.join-soc-list {
+  display: flex;
+  justify-content: center;
+}
+.join-soc-link {
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: var(--icon-bgc);
+}
+.join-soc-item:not(:last-child) {
+  margin-right: 10px;
+}
+.join-soc-link:hover,
+.join-soc-link:focus,
+.join-soc-link:active {
+  background-color: var(--accent-color);
 }
 
 /* Портфолио Фильтр*/
@@ -506,4 +593,15 @@ button {
 
 .pictures-link {
   text-decoration: none;
+}
+.pictures-list .pictures-link {
+  display: block;
+}
+.pictures-list .pictures-link:hover,
+.pictures-list .pictures-link:focus {
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
