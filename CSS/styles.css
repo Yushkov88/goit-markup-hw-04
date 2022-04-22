@@ -134,13 +134,13 @@ button {
   color: var(--accent-color);
 }
 
+.item-nav .link {
+  display: flex;
+  align-items: center;
+}
 .link-nav {
   margin-right: 10px;
-  fill: var(--secondary-text-color);
-}
-
-.link-nav:hover {
-  fill: var(--accent-color);
+  fill: currentColor;
 }
 
 .contacts {
@@ -250,10 +250,9 @@ button {
   width: 270px;
 }
 
-.features-list-item::before {
+.features-list-item {
   background-color: var(--bcg-team-color);
   display: inline-block;
-  content: '';
   width: 270px;
   height: 120px;
   margin-bottom: 30px;
@@ -262,18 +261,7 @@ button {
   background-position: center;
   /* outline: 2px solid tomato; */
 }
-.icon-antenna::before {
-  background-image: url(../Image/antenna.png);
-}
-.icon-vector::before {
-  background-image: url(../Image/clock\ 1.png);
-}
-.icon-diagram::before {
-  background-image: url(../Image/diagram\ 1.png);
-}
-.icon-astronaut::before {
-  background-image: url(../Image/astronaut\ 1.png);
-}
+
 .features-list-text {
   color: var(--secondary-text-color);
   font-size: 14px;
@@ -286,9 +274,19 @@ button {
   /* outline: 2px solid tomato; */
 }
 
+.features-icon {
+  display: flex;
+  padding: 0;
+  margin: 0 0 30px 0;
+  height: 120px;
+  background-color: var(--bcg-team-color);
+  justify-content: center;
+  align-items: center;
+}
+
 /* Чем мы занимаемся */
 .work {
-  padding-top: 0;
+  padding-top: 94px;
   /* outline: 2px solid tomato; */
 }
 .work-title {
@@ -312,9 +310,6 @@ button {
 /* Наша команда */
 .team {
   background-color: var(--bcg-team-color);
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
   /* outline: 2px solid tomato; */
 }
 
@@ -366,13 +361,18 @@ button {
 .team-list-soc {
   display: flex;
   justify-content: center;
+  margin-top: 16px;
+}
+
+.team-icon:not(:last-child) {
+  margin-right: 10px;
 }
 
 .team-list-item {
   margin-left: 10px;
-  box-shadow: none;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-  background: #ffffff;
 }
 .team-list-link {
   width: 44px;
@@ -535,6 +535,7 @@ button {
   background-color: var(--bcg-team-color);
   color: var(--primary-text-color);
   cursor: pointer;
+  padding: 6px 22px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
@@ -543,11 +544,18 @@ button {
   border: 1px solid transparent;
   /* outline: 2px solid tomato; */
 }
+.filters-list .current {
+  background-color: var(--accent-color);
+  color: var(--icon-bgc);
+  cursor: pointer;
+}
 
 .filters-btn:hover,
 .filters-btn:focus {
   background-color: var(--accent-color);
   color: var(--bcg-team-color);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* Портфолио Картинки */
@@ -599,9 +607,6 @@ button {
 }
 .pictures-list .pictures-link:hover,
 .pictures-list .pictures-link:focus {
-  cursor: pointer;
-  background: #ffffff;
-  border: 1px solid #eeeeee;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
